@@ -30,7 +30,7 @@ html, body {
   transform: perspective(600px) rotateX(6deg);
   transition: transform 0.16s, box-shadow 0.16s;
   box-shadow: 0 6px 30px rgba(0,255,106,0.06), 0 0 18px rgba(0,255,106,0.06) inset;
-  will-change: transform; /* Hint for smoother rendering */
+  will-change: transform;
 }
 
 .glitch-btn:hover {
@@ -52,8 +52,8 @@ html, body {
   mix-blend-mode: difference;
   opacity:0.8;
   pointer-events:none;
-  transform: perspective(600px) rotateX(6deg); /* match parent */
-  will-change: transform; /* smoother animation */
+  transform: perspective(600px) rotateX(6deg);
+  will-change: transform;
 }
 
 .glitch-btn::before {
