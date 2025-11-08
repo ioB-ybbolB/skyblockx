@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>SkyblockX</title>
 <style>
-html,body{
-  height:100%;
-  margin:0;
+html, body {
+  height: 100%;
+  margin: 0;
   background: radial-gradient(ellipse at 10% 10%, #071116 0%, #020406 40%, #000 100%);
   font-family: "Courier New", monospace;
-  display:grid;
-  place-items:center;
+  display: grid;
+  place-items: center;
 }
 
 .glitch-btn {
@@ -30,6 +30,7 @@ html,body{
   transform: perspective(600px) rotateX(6deg);
   transition: transform 0.16s, box-shadow 0.16s;
   box-shadow: 0 6px 30px rgba(0,255,106,0.06), 0 0 18px rgba(0,255,106,0.06) inset;
+  will-change: transform; /* Hint for smoother rendering */
 }
 
 .glitch-btn:hover {
@@ -51,6 +52,8 @@ html,body{
   mix-blend-mode: difference;
   opacity:0.8;
   pointer-events:none;
+  transform: perspective(600px) rotateX(6deg); /* match parent */
+  will-change: transform; /* smoother animation */
 }
 
 .glitch-btn::before {
@@ -62,37 +65,37 @@ html,body{
 }
 
 @keyframes glitchMove {
-  0% { transform: translate(0,0) skew(0deg,0deg) rotate(0deg); }
-  10% { transform: translate(-2px,1px) skew(-2deg,1deg); }
-  20% { transform: translate(2px,-1px) skew(1deg,-2deg); }
-  30% { transform: translate(-1px,2px) skew(0deg,1deg); }
-  40% { transform: translate(1px,-2px) skew(-1deg,0deg); }
-  50% { transform: translate(-2px,1px) skew(1deg,1deg); }
-  60% { transform: translate(2px,-1px) skew(-1deg,-1deg); }
-  70% { transform: translate(-1px,0px) skew(0deg,1deg); }
-  80% { transform: translate(1px,-1px) skew(1deg,0deg); }
-  90% { transform: translate(-1px,1px) skew(-1deg,0deg); }
-  100% { transform: translate(0,0) skew(0deg,0deg); }
+  0% { transform: perspective(600px) rotateX(6deg) translate(0,0) skew(0deg,0deg); }
+  10% { transform: perspective(600px) rotateX(6deg) translate(-2px,1px) skew(-2deg,1deg); }
+  20% { transform: perspective(600px) rotateX(6deg) translate(2px,-1px) skew(1deg,-2deg); }
+  30% { transform: perspective(600px) rotateX(6deg) translate(-1px,2px) skew(0deg,1deg); }
+  40% { transform: perspective(600px) rotateX(6deg) translate(1px,-2px) skew(-1deg,0deg); }
+  50% { transform: perspective(600px) rotateX(6deg) translate(-2px,1px) skew(1deg,1deg); }
+  60% { transform: perspective(600px) rotateX(6deg) translate(2px,-1px) skew(-1deg,-1deg); }
+  70% { transform: perspective(600px) rotateX(6deg) translate(-1px,0px) skew(0deg,1deg); }
+  80% { transform: perspective(600px) rotateX(6deg) translate(1px,-1px) skew(1deg,0deg); }
+  90% { transform: perspective(600px) rotateX(6deg) translate(-1px,1px) skew(-1deg,0deg); }
+  100% { transform: perspective(600px) rotateX(6deg) translate(0,0) skew(0deg,0deg); }
 }
 
 @keyframes glitchMove2 {
-  0% { transform: translate(0,0) skew(0deg,0deg); }
-  10% { transform: translate(1px,-1px) skew(1deg,0deg); }
-  20% { transform: translate(-1px,2px) skew(0deg,1deg); }
-  30% { transform: translate(2px,-1px) skew(-1deg,-1deg); }
-  40% { transform: translate(-2px,1px) skew(1deg,1deg); }
-  50% { transform: translate(1px,-2px) skew(0deg,0deg); }
-  60% { transform: translate(-1px,1px) skew(-1deg,0deg); }
-  70% { transform: translate(2px,-1px) skew(0deg,1deg); }
-  80% { transform: translate(-2px,2px) skew(1deg,-1deg); }
-  90% { transform: translate(1px,0px) skew(-1deg,1deg); }
-  100% { transform: translate(0,0) skew(0deg,0deg); }
+  0% { transform: perspective(600px) rotateX(6deg) translate(0,0) skew(0deg,0deg); }
+  10% { transform: perspective(600px) rotateX(6deg) translate(1px,-1px) skew(1deg,0deg); }
+  20% { transform: perspective(600px) rotateX(6deg) translate(-1px,2px) skew(0deg,1deg); }
+  30% { transform: perspective(600px) rotateX(6deg) translate(2px,-1px) skew(-1deg,-1deg); }
+  40% { transform: perspective(600px) rotateX(6deg) translate(-2px,1px) skew(1deg,1deg); }
+  50% { transform: perspective(600px) rotateX(6deg) translate(1px,-2px) skew(0deg,0deg); }
+  60% { transform: perspective(600px) rotateX(6deg) translate(-1px,1px) skew(-1deg,0deg); }
+  70% { transform: perspective(600px) rotateX(6deg) translate(2px,-1px) skew(0deg,1deg); }
+  80% { transform: perspective(600px) rotateX(6deg) translate(-2px,2px) skew(1deg,-1deg); }
+  90% { transform: perspective(600px) rotateX(6deg) translate(1px,0px) skew(-1deg,1deg); }
+  100% { transform: perspective(600px) rotateX(6deg) translate(0,0) skew(0deg,0deg); }
 }
 </style>
 </head>
 <body>
 <button class="glitch-btn" 
-onclick="window.open('javascript:alert(\'Skiovox Loaded! Do Blobwifi now...\');'); window.location.href='https://home.testnav.com';">
+onclick="window.open('javascript:alert(\'Skiovox Loaded! You can do Blobwifi now...\');'); window.location.replace('https://home.testnav.com');">
   Launch Skiovox
 </button>
 </body>
